@@ -7,6 +7,7 @@ const Card = (value) => {
   const { state, dispatch } = useContext(ShopContext);
 
   let { id, title, price, oldPrice, available, img, discount } = value;
+  const isLiked = state.like.some((item) => item.id === id);
 
   return (
     <div className="shadow-lg rounded-2xl relative transition-transform duration-300 hover:shadow-2xl hover:scale-105">
@@ -23,7 +24,11 @@ const Card = (value) => {
           }}
           className="absolute top-3 right-2"
         >
-          <Heart className="cursor-pointer" />
+          <Heart
+            fill={isLiked ? "red" : "none"}
+            stroke={isLiked ? "red" : "currentColor"} // border ham qizil bo'ladi
+            className="cursor-pointer"
+          />
         </div>
         <p className="absolute left-2 bottom-2 px-1 text-[#f00] text-base font-bold bg-[#fff7fc] rounded-2xl">
           {discount}
