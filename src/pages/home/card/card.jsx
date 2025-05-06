@@ -16,7 +16,13 @@ const Card = (value) => {
           alt={title}
           className="w-[230px] flex items-center justify-center m-auto h-[300px]"
         />
-        <div className="absolute top-3 right-2">
+        <div
+          onClick={() => {
+            dispatch({ type: "add_like", like: value }); // Ensure 'like' is passed correctly
+            toast.success("Like qo'shildi ! ");
+          }}
+          className="absolute top-3 right-2"
+        >
           <Heart className="cursor-pointer" />
         </div>
         <p className="absolute left-2 bottom-2 px-1 text-[#f00] text-base font-bold bg-[#fff7fc] rounded-2xl">

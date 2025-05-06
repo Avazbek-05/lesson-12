@@ -15,7 +15,7 @@ const NavbarBottom = () => {
         <div className=" py-[16.5px] flex items-center justify-between gap-5">
           <div className="flex items-center gap-[30px]">
             <img
-            onClick={() => navigate("/")}
+              onClick={() => navigate("/")}
               className="w-[139px] h-[26px] cursor-pointer max-[350px]:w-[100px] max-[290px]:w-[90px]"
               src={logo}
               alt="logo"
@@ -25,7 +25,6 @@ const NavbarBottom = () => {
               <p className="text-[#011c47] text-base font-bold max-[510px]:hidden">
                 Каталог
               </p>
-
             </button>
             <div className="border border-[#6682a9] rounded-md flex w-[762px] max-[1328px]:w-[600px] max-[1140px]:w-[500px] max-[1065]:w-[400px] items-center justify-between  max-[1040px]:hidden">
               <input
@@ -39,16 +38,24 @@ const NavbarBottom = () => {
             </div>
           </div>
           <div className="flex items-center gap-5">
-            <Badge onClick={() => navigate("/shop")} count={state.data.length}>
+            <Badge
+              onClick={() => navigate("/shop")}
+              count={
+                state.data && Array.isArray(state.data) ? state.data.length : 0
+              } // state.data tekshiruvi
+            >
               <ShoppingCart className="cursor-pointer max-[455px]:hidden" />
             </Badge>
-            <Heart onClick={() => navigate("/like")} className="cursor-pointer max-[455px]:hidden" />
-            {/* <div className="flex items-center gap-2.5 p-0.5">
-            <Globe className="cursor-pointer"/>
-           <a href="#">RU</a>
-          </div> */}
-            {/* <HelpCircle/> */}
-            {/* <Grid3x3 className="cursor-pointer"/> */}
+
+            <Badge
+              onClick={() => navigate("/like")}
+              count={
+                state.like && Array.isArray(state.like) ? state.like.length : 0
+              } // state.like tekshiruvi
+            >
+              <Heart className="cursor-pointer max-[455px]:hidden" />
+            </Badge>
+
             <Button className="cursor-pointer" type="primary">
               Войти
             </Button>

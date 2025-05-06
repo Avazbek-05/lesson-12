@@ -5,9 +5,27 @@ const ShopContext = createContext({});
 const ShopContextProvider = ({ children }) => {
   const initialState = {
     data: JSON.parse(localStorage.getItem("data")) || [],
+    like: JSON.parse(localStorage.getItem("like")) || [],
   };
+
   const reducer = (state, action) => {
     switch (action.type) {
+      case "add_like":
+        const isAlreadyLiked =
+          state.like && Array.isArray(state.like)
+            ? state.like.find((value) => value.id === action.like.id)
+            : undefined;
+
+        if (!isAlreadyLiked) {
+          const newLikes = [...state.like, action.like];
+          localStorage.setItem("like", JSON.stringify(newLikes));
+          return { ...state, like: newLikes };
+        }
+        return state;
+      case "delete_like":
+        const updatedLikes = state.like.filter((item) => item.id !== action.id);
+        localStorage.setItem("like", JSON.stringify(updatedLikes));
+        return { ...state, like: updatedLikes };
       case "add_product":
         if (state.data.find((value) => value.id === action.data.id)) {
           const updatedData = state.data.map((value) => {
@@ -32,6 +50,7 @@ const ShopContextProvider = ({ children }) => {
         };
         localStorage.setItem("data", JSON.stringify(newData.data));
         return newData;
+
       case "increment":
         const updatedDataIncrement = state.data.map((value) => {
           if (value.id === action.id) {
@@ -45,6 +64,7 @@ const ShopContextProvider = ({ children }) => {
         });
         localStorage.setItem("data", JSON.stringify(updatedDataIncrement));
         return { data: updatedDataIncrement };
+
       case "decrement":
         const updatedDataDecrement = state.data.map((value) => {
           if (value.id === action.id) {
@@ -61,6 +81,7 @@ const ShopContextProvider = ({ children }) => {
         });
         localStorage.setItem("data", JSON.stringify(updatedDataDecrement));
         return { data: updatedDataDecrement };
+
       case "delete":
         const deleteProduct = state.data.filter(
           (value) => value.id !== action.id
@@ -71,6 +92,7 @@ const ShopContextProvider = ({ children }) => {
   };
 
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <ShopContext.Provider value={{ state, dispatch }}>
       {children}

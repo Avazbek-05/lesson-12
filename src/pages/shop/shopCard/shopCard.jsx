@@ -7,11 +7,8 @@ const ShopCard = ({
   id,
   title,
   price,
-  oldPrice,
-  available,
   count,
   img,
-  discount,
   userPrice,
 }) => {
   const { state, dispatch } = useContext(ShopContext);
