@@ -9,7 +9,7 @@ const MenuBar = () => {
 
         <div className="menu-bar mt-[123px] flex flex-col items-center justify-center">
             <label htmlFor="check">
-            <TicketX  size={40} className="absolute top-10 right-20 cursor-pointer" />
+            <TicketX  size={32} className="absolute top-10 right-20 cursor-pointer" />
             </label>
           <div className="flex items-center gap-5 ">
             <Component />
