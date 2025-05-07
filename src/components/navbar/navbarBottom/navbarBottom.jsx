@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+
 import logo from "../../../assets/svg/logo.svg";
 import catalog from "../../../assets/svg/catalog.svg";
 import { Heart, Search, ShoppingCart } from "lucide-react";
