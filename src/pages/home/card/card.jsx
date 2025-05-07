@@ -7,7 +7,10 @@ const Card = (value) => {
   const { state, dispatch } = useContext(ShopContext);
 
   let { id, title, price, oldPrice, available, img, discount } = value;
-  const isLiked = state.like.some((item) => item.id === id);
+  const isLiked = state?.like?.some((item) => item.id === id);
+
+
+
 
   return (
     <div className="shadow-lg rounded-2xl relative transition-transform duration-300 hover:shadow-2xl hover:scale-105">
