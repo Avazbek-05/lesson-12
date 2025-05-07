@@ -15,7 +15,10 @@ const Footer = () => {
           <div className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between gap-2">
               <p className="text-[#6682a9] text-base">Call-центр</p>
-              <a className="text-[#222] text-base max-[306px]:text-[13px]" href="tel:+998-78 555-35-00">
+              <a
+                className="text-[#222] text-base max-[306px]:text-[13px]"
+                href="tel:+998-78 555-35-00"
+              >
                 +998-78 555-35-00
               </a>
             </div>
@@ -45,10 +48,18 @@ const Footer = () => {
               Мы в социальных сетях
             </h3>
             <div className="flex items-center justify-between">
-              <img src={telegram} alt="telegram" />
-              <img src={youtube} alt="youtube" />
-              <img src={instagram} alt="instagram" />
-              <img src={facebook} alt="facebook" />
+              <a href="https://telegram.org/">
+                <img src={telegram} alt="telegram" />
+              </a>
+              <a href="https://www.youtube.com/">
+                <img src={youtube} alt="youtube" />
+              </a>
+              <a href="#">
+                <img src={instagram} alt="instagram" />
+              </a>
+              <a href="https://www.facebook.com/?locale=ru_RU">
+                <img src={facebook} alt="facebook" />
+              </a>
             </div>
           </div>
           <div className="p-4 border border-[#e9e9e9] rounded-md flex flex-col gap-1">
@@ -75,22 +86,42 @@ const Footer = () => {
               <a href="#">Реквизиты</a>
               <a href="#">Покупать как юрлицо</a>
             </div>
-            <a className="text-[#6682a9] text-base" href="#">Контакты</a>
-            <a className="text-[#6682a9] text-base" href="#">Вакансии</a>
-            <a className="text-[#6682a9] text-base" href="#">Карта сайта</a>
-            <a className="text-[#6682a9] text-base" href="#">Публичная оферта</a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Контакты
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Вакансии
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Карта сайта
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Публичная оферта
+            </a>
           </div>
         </div>
         {/* 4 */}
         <div className="border border-[#e9e9e9] rounded-md p-[21px] flex flex-col gap-3">
-        <h3 className="text-[#222] text-base font-bold">Помощь</h3>
-        <div className="flex flex-col gap-1.5">
-            <a className="text-[#6682a9] text-base" href="#">Вопросы и ответы</a>
-            <a className="text-[#6682a9] text-base" href="#">Условия рассрочки</a>
-            <a className="text-[#6682a9] text-base" href="#">Способ оптлаты</a>
-            <a className="text-[#6682a9] text-base" href="#">Доставка</a>
-            <a className="text-[#6682a9] text-base" href="#">Возврат товаров</a>
-            <a className="text-[#6682a9] text-base" href="#">Сервисные центры</a>
+          <h3 className="text-[#222] text-base font-bold">Помощь</h3>
+          <div className="flex flex-col gap-1.5">
+            <a className="text-[#6682a9] text-base" href="#">
+              Вопросы и ответы
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Условия рассрочки
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Способ оптлаты
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Доставка
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Возврат товаров
+            </a>
+            <a className="text-[#6682a9] text-base" href="#">
+              Сервисные центры
+            </a>
           </div>
         </div>
       </div>

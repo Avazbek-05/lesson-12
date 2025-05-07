@@ -22,7 +22,7 @@ const NavbarBottom = () => {
               alt="logo"
             />
             <button className="border-2 border-[#011c47] rounded-md p-[6px_14px] max-[309px]:p-1.5 flex items-center gap-2 cursor-pointer">
-              <img src={catalog} alt="catalog" />
+        <label htmlFor="check">      <img src={catalog} alt="catalog" /></label>
               <p className="text-[#011c47] text-base font-bold max-[510px]:hidden">
                 Каталог
               </p>
@@ -74,6 +74,7 @@ const NavbarBottom = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </section>
   );
